@@ -1,0 +1,105 @@
+{% extends 'realestate/base.html' %}
+{% block title %} Quick View Place {% endblock %}
+{% load static %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="hero page-inner overlay" style="background-image: url({{i.image.url}})">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-9 text-center mt-5">
+        <h1 class="heading" data-aos="fade-up">
+          {{i.place_name}}
+        </h1>
+
+        <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+          <ol class="breadcrumb text-center justify-content-center">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="breadcrumb-item">
+              <a href="{% url 'places' %}">Places</a>
+            </li>
+            <li class="breadcrumb-item active text-white-50" aria-current="page">
+              {{i.place_name}}
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="row justify-content-between">
+
+      <div class="col-lg-7">
+  <div class="ecommerce-gallery" style="cursor: pointer;">
+    <div class="row py-3 shadow-5">
+      <!-- Main Image -->
+      <div class="col-12 mb-1">
+        <div class="lightbox">
+          <img id="main-img"
+               src="{{i.image.url}}"
+               alt="Gallery image 1"
+               class="ecommerce-gallery-main-img active w-100" />
+        </div>
+      </div>
+
+      <!-- Thumbnails -->
+      <div class="col-3 mt-1">
+        <img src="{{i.image.url}}"
+             alt="Gallery image 1"
+             class="thumb-img w-100 active"
+             data-full="{{i.image.url}}" />
+      </div>
+      <div class="col-3 mt-1">
+        <img src="{{i.sub_image1.url}}"
+             alt="Gallery image 2"
+             class="thumb-img w-100"
+             data-full="{{i.sub_image1.url}}" />
+      </div>
+      <div class="col-3 mt-1">
+        <img src="{{i.sub_image2.url}}"
+             alt="Gallery image 3"
+             class="thumb-img w-100"
+             data-full="{{i.sub_image2.url}}" />
+      </div>
+      <div class="col-3 mt-1">
+        <img src="{{i.sub_image3.url}}"
+             alt="Gallery image 4"
+             class="thumb-img w-100"
+             data-full="{{i.sub_image3.url}}" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="col-lg-4">
+        <h2 class="heading text-primary">{{i.place_name}}</h2>
+        <h3 class="heading text-primary">{{i.place_loacation}}</h3>
+        <p class="text-black-50">
+          {{i.about_place}}
+        </p>
+        <p class="text-black-50">
+          Perferendis eligendi reprehenderit, assumenda molestias nisi eius
+          iste reiciendis porro tenetur in, repudiandae amet libero.
+          Doloremque, reprehenderit cupiditate error laudantium qui, esse
+          quam debitis, eum cumque perferendis, illum harum expedita.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

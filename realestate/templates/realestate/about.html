@@ -1,0 +1,96 @@
+{% extends 'realestate/base.html' %}
+{% block title %} about {% endblock %}
+{% load static %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block body %}
+<!-- Carousel wrapper -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <video class="img-fluid" autoplay loop muted>
+        <source src="{% static 'house/images/about/1.mp4' %}" type="video/mp4" />
+      </video>
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="c-title">Our Story</h5>
+        <p class="c-para">Superior Stay Homes offers handpicked holiday stays across Dubai — from city-center apartments
+          to tranquil villas — designed to make every trip feel like home.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Carousel wrapper -->
+
+<div class="section">
+  <div class="container">
+    <div class="row text-left mb-5">
+      <div class="col-12">
+        <h2 class="font-weight-bold heading text-primary mb-4">About Us</h2>
+      </div>
+      <div class="col-lg-6">
+        <p class="text-black-50">
+          At Superior Stay Homes, our journey started in 2015 with a simple yet meaningful mission: to be the reason
+          your holiday feels just right. We believe that a great stay doesn’t just complement your trip — it defines it.
+          That’s why we go beyond just offering properties; we curate experiences that feel like home, no matter where
+          you come from.
+        </p>
+        <p class="text-black-50">
+          Finding the perfect holiday home in a city as dynamic as Dubai can be overwhelming. With so many options, it’s
+          hard to strike the balance between location, comfort, and value. That’s why our exclusive collection of homes
+          is carefully selected to be in strategic areas, giving you easy access to major attractions, shopping
+          destinations, and cultural hotspots — all without compromising on affordability!
+        </p>
+        <p class="text-black-50">
+          Still, we understand that not every traveler wants to be in the heart of the action. Sometimes, the perfect
+          getaway is one where calm and quiet take center stage. For those moments, we offer peaceful retreats designed
+          for relaxation and privacy, far from the city's hustle.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <p class="text-black-50">
+          Whether you're dreaming of sunset views over the sea or a private escape in lush surroundings, our luxury
+          villas in Palm Jumeirah and Dubai Hills are ready to welcome you. Complete with private pools and premium
+          amenities, they offer a sanctuary where you can recharge, reconnect, and truly unwind — any time of the year.
+        </p>
+        <p class="text-black-50">
+          Be a part of our holiday home. With Superior Stay Homes, every stay begins with comfort, continues with
+          connection, and ends with unforgettable memories.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="section section-3 pt-5">
+  <div class="container">
+    <!-- Masonry Gallery -->
+    <div class="masonry">
+      <img src="{% static 'house/images/about/1.jpg' %}" alt="Image 2">
+      <img src="{% static 'house/images/about/2.jpg' %}" alt="Image 2">
+      <img src="https://cdn.pixabay.com/photo/2019/03/09/21/30/downtown-4045037_1280.jpg" alt="Image 1">
+      <img src="https://cdn.pixabay.com/photo/2022/08/14/14/21/desert-7386004_1280.jpg" alt="Image 3">
+      <img src="https://cdn.pixabay.com/photo/2025/05/29/09/51/dubai-9629133_1280.jpg" alt="Image 4">
+      <img src="https://cdn.pixabay.com/photo/2016/02/28/20/23/dubai-1227538_1280.jpg" alt="Image 5">
+      <img src="https://cdn.pixabay.com/photo/2024/09/20/01/37/dubai-creek-9060098_1280.jpg" alt="Image 6">
+    </div>
+    <!-- End Masonry Gallery -->
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

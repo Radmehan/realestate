@@ -1,0 +1,106 @@
+{% extends 'realestate/base.html' %}
+{% block title %} Quick View Place {% endblock %}
+{% load static %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block body %}
+
+<!-- Carousel wrapper -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-aos="fade-up">
+      <!-- <video class="img-fluid" autoplay loop muted>
+        <source src="{% static 'house/images/service/2.mp4' %}" type="video/mp4" />
+      </video> -->
+      <img src="{{i.image.url}}" alt="Image" srcset="">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="c-title">{{i.villa_or_apartment_name}}</h5>
+        <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+          <ol class="breadcrumb text-center justify-content-center">
+            <li class="breadcrumb-item" class="text-black"><a href="{% url 'home' %}" class="text-black">Home</a></li>
+            <li class="breadcrumb-item" class="text-black">
+              <a href="{% url 'properties' %}" class="text-black">Houses</a>
+            </li>
+            <li class="breadcrumb-item active text-black" aria-current="page">
+              {{i.villa_or_apartment_name}}
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Carousel wrapper -->
+
+
+<div class="section">
+  <div class="container">
+    <div class="row justify-content-between">
+
+      <div class="col-lg-7">
+        <div class="ecommerce-gallery" style="cursor: pointer;">
+          <div class="row py-3 shadow-5">
+            <!-- Main Image -->
+            <div class="col-12 mb-1">
+              <div class="lightbox">
+                <img id="main-img" src="{{i.image.url}}" alt="Gallery image 1"
+                  class="ecommerce-gallery-main-img active w-100" />
+              </div>
+            </div>
+
+            <!-- Thumbnails -->
+            <div class="col-3 mt-1">
+              <img src="{{i.image.url}}" alt="Gallery image 1" class="thumb-img w-100 active"
+                data-full="{{i.image.url}}" />
+            </div>
+            <div class="col-3 mt-1">
+              <img src="{{i.sub_image1.url}}" alt="Gallery image 2" class="thumb-img w-100"
+                data-full="{{i.sub_image1.url}}" />
+            </div>
+            <div class="col-3 mt-1">
+              <img src="{{i.sub_image2.url}}" alt="Gallery image 3" class="thumb-img w-100"
+                data-full="{{i.sub_image2.url}}" />
+            </div>
+            <div class="col-3 mt-1">
+              <img src="{{i.sub_image3.url}}" alt="Gallery image 4" class="thumb-img w-100"
+                data-full="{{i.sub_image3.url}}" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-4" style="white-space: pre-line;">
+        <h3 class="heading text-primary">{{i.villa_or_apartment_name}}</h3>
+        <h4 class="heading text-primary">{{i.loacation}}</h4>
+        <p class="text-black-50">
+          {{i.about}}
+        </p>
+        <div class="specs d-flex mb-4">
+          <span class="d-block d-flex align-items-center me-3">
+            <span class="icon-bed me-2"></span>
+            <span class="caption">{{i.bed}}</span>
+          </span>
+          <span class="d-block d-flex align-items-center">
+            <span class="icon-bath me-2"></span>
+            <span class="caption">{{i.washroom}}</span>
+          </span>
+        </div>
+
+        <h4 class="heading text-primary">{{i.city}}</h4>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

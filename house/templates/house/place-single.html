@@ -1,0 +1,266 @@
+{% extends 'realestate/base.html' %}
+{% block title %} Enjoying Place {% endblock %}
+{% load static %}
+
+{% block css %}
+<style>
+
+</style>
+{% endblock %}
+
+{% block body %}
+
+<!-- Carousel wrapper -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <video class="img-fluid" autoplay loop muted>
+        <source src="{% static 'house/images/place/2.mp4' %}" type="video/mp4" />
+      </video>
+      <!-- <img src="{% static 'house/images/home/1.jpeg' %}" alt="Image" srcset=""> -->
+      <div class="carousel-caption d-none d-md-block" data-aos="fade-up" data-aos-delay="300">
+        <h5 class="c-title">Book Your Dream Holiday Home in Dubai Today</h5>
+        <p class="c-para">From stylish apartments to fully furnished villas, Superior Stay Homes offers a range
+          of
+          rental options for both short and long stays. No matter your plans, we’ve got the perfect place for
+          you to
+          call home in Dubai!</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Carousel wrapper -->
+
+<!-- place_single slide -->
+
+<div class="container py-5">
+  <h2 class="text-center text-primary mb-4" data-aos="fade-up" data-aos-delay="300">
+    Tourism Places in {{ city }} ({{ image_count }} Places)
+  </h2>
+
+  {% if images %}
+  <div class="row">
+    <!-- Thumbnails -->
+    <div class="col-3">
+      <div class="d-flex flex-column gap-2" data-aos="fade-up" data-aos-delay="500">
+        {% for img_url in images %}
+        <img src="{{ img_url }}" class="img-thumbnail thumb-img {% if forloop.first %}active{% endif %}"
+          data-bs-target="#mainCarousel" data-bs-slide-to="{{ forloop.counter0 }}" style="cursor: pointer;"
+          alt="Thumb {{ forloop.counter }}">
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Main Carousel -->
+    <div class="col-9">
+      <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          {% for img_url in images %}
+          <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <img src="{{ img_url }}" class="d-block w-100" alt="Slide {{ forloop.counter }}">
+          </div>
+          {% endfor %}
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <p class="text-center">No images available for this city.</p>
+  {% endif %}
+</div>
+
+
+<div class="section section-properties py-5">
+  <div class="container">
+    <div class="row mb-5 align-items-center" data-aos="fade-up" data-aos-delay="600">
+      <div class="col-lg-6">
+        <h2 class="font-weight-bold text-primary heading">
+          Choose a Holiday Home in Dubai - Apartments
+        </h2>
+      </div>
+      <div class="col-lg-6 text-lg-end">
+        <p>
+          <a href="#" target="_blank" class="btn btn-primary text-white py-3 px-4">Enjoying
+            Apartment</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Carousel wrapper -->
+  <div id="Acacia" class="carousel slide carousel-dark text-center" data-bs-ride="carousel">
+    <!-- Controls -->
+    <div class="d-flex justify-content-center mb-4">
+      <button class="carousel-control-prev position-relative" type="button" data-bs-target="#Acacia"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next position-relative" type="button" data-bs-target="#Acacia"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Inner -->
+    <div class="carousel-inner py-4" data-aos="fade-up" data-aos-delay="600">
+      {% for apartment in apartments %}
+      {% if forloop.counter0|divisibleby:3 %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <div class="container">
+          <div class="row">
+            {% endif %}
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card">
+                <img src="{{ apartment.image.url }}" class="card-img-top" alt="{{ apartment.villa_or_apartment_name }}">
+                <div class="card-body">
+                  <h5 class="card-title">{{ apartment.villa_or_apartment_name }}</h5>
+                  <h6 class="card-title">
+                    <i class="fa-solid fa-location-dot"></i> {{ apartment.loacation }} | {{ apartment.city }}
+                  </h6>
+                  <h6 class="card-title">
+                    <i class="fa-solid fa-house"></i> Apartment
+                  </h6>
+                  <div class="specs d-flex mb-4">
+                    <span class="d-block d-flex align-items-center me-3">
+                      <span class="icon-bed me-2"></span>
+                      <span class="caption">{{ apartment.bed }} beds</span>
+                    </span>
+                    <span class="d-block d-flex align-items-center">
+                      <span class="icon-bath me-2"></span>
+                      <span class="caption">{{ apartment.washroom }} baths</span>
+                    </span>
+                  </div>
+                  <a href="#" class="btn btn-primary py-2 px-3">See details</a>
+                </div>
+              </div>
+            </div>
+
+            {% if forloop.counter|divisibleby:3 or forloop.last %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% empty %}
+      <div class="carousel-item active">
+        <div class="container">
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <h4>No apartments found in <strong>{{ city }}</strong>.</h4>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Inner end -->
+  </div>
+  <!-- Carousel wrapper end -->
+</div>
+
+<div class="section section-properties py-5">
+  <div class="container">
+    <div class="row mb-5 align-items-center" data-aos="fade-up" data-aos-delay="600">
+      <div class="col-lg-6">
+        <h2 class="font-weight-bold text-primary heading">
+          Choose a Holiday Home in Dubai - Villa
+        </h2>
+      </div>
+      <div class="col-lg-6 text-lg-end">
+        <p>
+          <a href="#" target="_blank" class="btn btn-primary text-white py-3 px-4">Enjoying Villa</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Carousel wrapper -->
+  <div id="Academic" class="carousel slide carousel-dark text-center" data-bs-ride="carousel">
+    <!-- Controls -->
+    <div class="d-flex justify-content-center mb-4">
+      <button class="carousel-control-prev position-relative" type="button" data-bs-target="#Academic"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next position-relative" type="button" data-bs-target="#Academic"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Inner -->
+    <div class="carousel-inner py-4" data-aos="fade-up" data-aos-delay="600">
+      {% for villa in villas %}
+      {% if forloop.counter0|divisibleby:3 %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <div class="container">
+          <div class="row">
+            {% endif %}
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card">
+                <img src="{{ villa.image.url }}" class="card-img-top" alt="{{ villa.villa_or_apartment_name }}">
+                <div class="card-body">
+                  <h5 class="card-title">{{ villa.villa_or_apartment_name }}</h5>
+                  <h6 class="card-title">
+                    <i class="fa-solid fa-location-dot"></i> {{ villa.loacation }} | {{ villa.city }}
+                  </h6>
+                  <h6 class="card-title">
+                    <i class="fa-solid fa-house"></i> Villa
+                  </h6>
+                  <div class="specs d-flex mb-4">
+                    <span class="d-block d-flex align-items-center me-3">
+                      <span class="icon-bed me-2"></span>
+                      <span class="caption">{{ villa.bed }} beds</span>
+                    </span>
+                    <span class="d-block d-flex align-items-center">
+                      <span class="icon-bath me-2"></span>
+                      <span class="caption">{{ villa.washroom }} baths</span>
+                    </span>
+                  </div>
+                  <a href="#" class="btn btn-primary py-2 px-3">See details</a>
+                </div>
+              </div>
+            </div>
+
+            {% if forloop.counter|divisibleby:3 or forloop.last %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% empty %}
+      <div class="carousel-item active">
+        <div class="container">
+         
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <h4>No villas found in <strong>{{ city }}</strong>.</h4>
+          </div>
+
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Inner end -->
+  </div>
+  <!-- Carousel wrapper end -->
+</div>
+
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

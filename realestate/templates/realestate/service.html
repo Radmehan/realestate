@@ -1,0 +1,167 @@
+{% extends 'realestate/base.html' %}
+{% block title %} Service {% endblock %}
+{% load static %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block body %}
+
+<!-- Carousel wrapper -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'house/images/service/1.jpg' %}" alt="Image" srcset="">
+      <div class="carousel-caption d-none d-md-block" data-aos="fade-up" data-aos-delay="300">
+        <h5 class="c-title">Our Services</h5>
+        <p class="c-para">Superior Stay Homes delivers a complete hospitality experience — from exceptional stays to expert property management — tailored for comfort, convenience, and peace of mind.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Carousel wrapper -->
+
+<div class="section section-4 bg-light">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-lg-5">
+        <h2 class="font-weight-bold heading text-primary mb-4" data-aos="fade-up" data-aos-delay="300">
+          Come Home With Us
+        </h2>
+        <p class="text-black-50" data-aos="fade-up" data-aos-delay="300">
+         At Superior Stay Homes, we offer more than just holiday homes — we provide a complete hospitality experience designed for comfort, convenience, and peace of mind. Whether you're a guest looking for the perfect stay or a property owner seeking expert management, our services are designed to meet your every need.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="section bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="box-feature mb-4">
+              <span class="flaticon-house mb-4 d-block"></span>
+              <h3 class="text-black mb-3 font-weight-bold">
+                Holiday Home Rentals
+              </h3>
+              <p class="text-black-50">
+                Fully furnished apartments and luxury villas available for daily, weekly, or monthly stays across Dubai.
+              </p>
+              <p><a href="#" class="learn-more">Read more</a></p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="box-feature mb-4">
+              <span class="flaticon-house-2 mb-4 d-block-3"></span>
+              <h3 class="text-black mb-3 font-weight-bold">Prime Locations</h3>
+              <p class="text-black-50">
+                Strategically located homes near beaches, shopping malls, business districts, and tourist hotspots.
+              </p>
+              <p><a href="#" class="learn-more">Read more</a></p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="box-feature mb-4">
+              <span class="flaticon-building mb-4 d-block"></span>
+              <h3 class="text-black mb-3 font-weight-bold">
+                Luxury Villa Stays
+              </h3>
+              <p class="text-black-50">
+                Premium villas in Palm Jumeirah and Dubai Hills, complete with private pools and elegant interiors.
+              </p>
+              <p><a href="#" class="learn-more">Read more</a></p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="box-feature mb-4">
+              <span class="flaticon-building mb-4 d-block"></span>
+              <h3 class="text-black mb-3 font-weight-bold">
+                Luxury Services Appartment Stay
+              </h3>
+              <p class="text-black-50">
+                Premium villas in Palm Jumeirah and Dubai Hills, complete with private pools and elegant interiors.
+              </p>
+              <p><a href="#" class="learn-more">Read more</a></p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="box-feature mb-4">
+              <span class="flaticon-house-3 mb-4 d-block-1"></span>
+              <h3 class="text-black mb-3 font-weight-bold">Concierge Services</h3>
+              <p class="text-black-50">
+                From airport transfers to tour bookings and restaurant reservations — we’ve got it all covered.
+              </p>
+              <p><a href="#" class="learn-more">Read more</a></p>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="section sec-testimonials">
+      <div class="container">
+        <div class="row mb-5 align-items-center">
+          <div class="col-md-6">
+            <h2 class="font-weight-bold heading text-primary mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="300">
+              Customer Says
+            </h2>
+          </div>
+          <div class="col-md-6 text-md-end" data-aos="fade-up" data-aos-delay="300">
+            <div id="testimonial-nav">
+              <span class="prev" data-controls="prev">Prev</span>
+
+              <span class="next" data-controls="next">Next</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4"></div>
+        </div>
+        <div class="testimonial-slider-wrap">
+          <div class="testimonial-slider">
+
+            {% for i in reviews %}
+            <div class="item">
+              <div class="testimonial">
+                <img
+                  src="{{i.image.url}}"
+                  alt="Image"
+                  class="img-fluid rounded-circle w-25 mb-4"
+                />
+                <div class="rate">
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                  <span class="icon-star text-warning"></span>
+                </div>
+                <h3 class="h5 text-primary mb-4">{{i.name}}</h3>
+                <blockquote>
+                  <p>
+                    &ldquo;{{i.description}}&rdquo;
+                  </p>
+                </blockquote>
+                <p class="text-black-50">{{i.profession}}</p>
+              </div>
+            </div>
+            {% endfor %}
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

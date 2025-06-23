@@ -1,0 +1,123 @@
+{% extends 'realestate/base.html' %}
+{% block title %} Enjoying Place {% endblock %}
+{% load static %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block body %}
+
+<!-- Carousel wrapper -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <video class="img-fluid" autoplay loop muted>
+                <source src="{% static 'house/images/place/1.mp4' %}" type="video/mp4" />
+            </video>
+            <!-- <img src="{% static 'house/images/home/1.jpeg' %}" alt="Image" srcset=""> -->
+            <div class="carousel-caption d-none d-md-block" data-aos="fade-up" data-aos-delay="300">
+                <h5 class="c-title">Book Your Dream Holiday Home in Dubai Today</h5>
+                <p class="c-para">From stylish apartments to fully furnished villas, Superior Stay Homes offers a range
+                    of
+                    rental options for both short and long stays. No matter your plans, we’ve got the perfect place for
+                    you to
+                    call home in Dubai!</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Carousel wrapper -->
+
+
+
+<div class="section section-properties py-5" data-aos="fade-up" data-aos-delay="600">
+    {% for product, range, nSlides in allPlaces %}
+    <div class="container">
+        <div class="row mb-5 align-items-center">
+            <div class="col-lg-6">
+                <h2 class="font-weight-bold text-primary heading">
+                    Choose a Holiday Place in Dubai - {{product.0.city}}
+                </h2>
+            </div>
+            <div class="col-lg-6 text-lg-end">
+                <p>
+                    <a href="{% url 'place_single' product.0.city %}" target="_blank"
+                        class="btn btn-primary text-white py-3 px-4">Enjoying {{product.0.city}}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel wrapper -->
+    <div id="demo{{forloop.counter}}" class="carousel slide carousel-dark text-center" data-bs-ride="carousel">
+        <!-- Controls -->
+        <div class="d-flex justify-content-center mb-4">
+            <button class="carousel-control-prev position-relative" type="button"
+                data-bs-target="#demo{{forloop.counter}}" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next position-relative" type="button"
+                data-bs-target="#demo{{forloop.counter}}" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Inner -->
+        <div class="carousel-inner py-4">
+
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+
+                <div class="container">
+                    <div class="row">
+                        {% for i in product %}
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <img src="{{i.image.url}}" class="card-img-top"
+                                    alt="{{i.place_name}} {{i.city}} {{i.place_location}}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{i.place_name}}</h5>
+                                    <p class="card-text">{{i.about_place|slice:'0:40'}}....</p>
+                                    <a href="{% url 'place_quick_view' i.id %}" class="btn btn-primary">Quick View</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row">
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <!-- Inner end -->
+    </div>
+    <!-- Carousel wrapper end -->
+
+    {% endfor %}
+</div>
+
+
+
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

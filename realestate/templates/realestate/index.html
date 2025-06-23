@@ -1,0 +1,384 @@
+{% extends 'realestate/base.html' %}
+{% block title %} Home {% endblock %}
+{% load static %}
+
+{% block css %}
+<style>
+
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+<!-- Carousel wrapper -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <video class="img-fluid" autoplay loop muted>
+        <source src="{% static 'house/images/2.mp4' %}" type="video/mp4" />
+        
+      </video>
+      <div class="carousel-caption d-none d-md-block" data-aos="fade-up" data-aos-delay="300">
+        <h5 class="c-title">Top Holiday Homes Rental in Dubai</h5>
+        <p class="c-para">A hotel experience
+          at the comfort and price of a holiday home. Explore the very best vacation rentals in
+          Dubai!</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <video class="img-fluid" autoplay loop muted>
+        <source src="https://mdbcdn.b-cdn.net/img/video/Tropical.mp4" type="video/mp4" />
+      </video>
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="c-title">Short Term Vacation Rentals in Dubai</h5>
+        <p class="c-para">A hotel experience
+          at the comfort and price of a holiday home. Explore the very best vacation rentals in
+          Dubai!</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <video class="img-fluid" autoplay loop muted>
+        <source src="{% static 'house/images/3.mp4' %}" type="video/mp4" />
+      </video>
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="c-title">Vacation Rentals Management Services in Dubai</h5>
+        <p class="c-para">A hotel experience
+          at the comfort and price of a holiday home. Explore the very best vacation rentals in
+          Dubai!</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- Carousel wrapper -->
+
+<div class="section section-4 bg-light" data-aos="fade-up" data-aos-delay="1200">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-5" >
+      <div class="col-lg-5">
+        <h2 class="font-weight-bold heading text-primary mb-4">
+          Come Home With Us
+        </h2>
+        <p class="text-black-50">
+          Appreciate different cultures, make connections, and cross cultural divisions. We believe that the best travel
+          experience isn’t complete without guests getting that local experience! Come Home with Us and experience
+          Dubai’s wonders right in the comfort and luxury of our holiday homes.
+        </p>
+      </div>
+    </div>
+    <div class="row justify-content-between mb-5">
+      <div class="col-lg-7 mb-5 mb-lg-0 order-lg-2">
+        <div class="img-about dots">
+          <video autoplay loop muted plays-inline class="background-clip" style="width: 100%;">
+            <source src="{% static 'house/images/HHexploreVid_uu1oef.mp4' %}" type="video/mp4">
+          </video>
+          <!-- <video style="width: 100%;" muted="" loop="" src="{% static 'house/images/HHexploreVid_uu1oef.mp4' %}"></video> -->
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="d-flex feature-h">
+          <span class="wrap-icon me-3">
+            <span class="icon-globe"></span>
+          </span>
+          <div class="feature-text">
+            <h3 class="heading">1k Places</h3>
+            <p class="text-black-50">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Nostrum iste.
+            </p>
+          </div>
+        </div>
+
+        <div class="d-flex feature-h">
+          <span class="wrap-icon me-3">
+            <span class="icon-home2"></span>
+          </span>
+          <div class="feature-text">
+            <h3 class="heading">25k Homes</h3>
+            <p class="text-black-50">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Nostrum iste.
+            </p>
+          </div>
+        </div>
+
+        <div class="d-flex feature-h">
+          <span class="wrap-icon me-3">
+            <span class="icon-security"></span>
+          </span>
+          <div class="feature-text">
+            <h3 class="heading">Legit Trustable</h3>
+            <p class="text-black-50">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Nostrum iste.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section-3">
+  <div class="container">
+    <div class="row mb-5 align-items-center" data-aos="fade-up" data-aos-delay="500">
+      <div class="col-lg-6">
+        <h2 class="font-weight-bold text-primary heading">
+          Top Communities to stay in Dubai
+        </h2>
+
+      </div>
+      <div class="col-lg-6 text-lg-end">
+        <p>
+          <a href="#" target="_blank" class="btn btn-primary text-white py-3 px-4">Discover</a>
+        </p>
+      </div>
+    </div>
+    <!-- Gallery -->
+    <div class="row" data-aos="fade-up" data-aos-delay="500">
+      <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+        <img src="https://cdn.pixabay.com/photo/2015/12/29/18/25/dubai-1113262_1280.jpg"
+          class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+
+        <img src="https://cdn.pixabay.com/photo/2021/12/22/14/52/aerial-6887706_1280.jpg"
+          class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape" />
+      </div>
+
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <img src="https://cdn.pixabay.com/photo/2021/12/22/14/53/aerial-6887721_1280.jpg"
+          class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds" />
+
+        <img src=" https://cdn.pixabay.com/photo/2022/08/14/14/21/desert-7386004_1280.jpg"
+          class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds" />
+
+
+        <img src="https://cdn.pixabay.com/photo/2023/02/04/16/29/boat-7767575_1280.jpg"
+          class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+      </div>
+
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <img src="https://cdn.pixabay.com/photo/2024/09/20/01/37/dubai-creek-9060098_1280.jpg"
+          class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+
+        <img src="https://cdn.pixabay.com/photo/2020/08/23/04/04/atlantis-the-palm-5509820_1280.jpg"
+          class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+      </div>
+    </div>
+    <!-- Gallery -->
+  </div>
+</section>
+
+<div class="section">
+  <div class="container">
+    <div class="row mb-5 align-items-center" data-aos="fade-up" data-aos-delay="500">
+      <div class="col-lg-6">
+        <h2 class="font-weight-bold text-primary heading">
+          Experience Dubai
+        </h2>
+      </div>
+      <div class="col-lg-6 text-lg-end">
+        <p>
+          <a href="{% url 'places' %}" target="_blank" class="btn btn-primary text-white py-3 px-4">View all places</a>
+        </p>
+      </div>
+    </div>
+    <div class="row" data-aos="fade-up" data-aos-delay="500">
+      <div class="col-12">
+        <div class="property-slider-wrap">
+          <div class="property-slider">
+
+            {% for i in places %}
+            <div class="property-item">
+              <a href="property-single.html" class="img">
+                <img src="{{ i.image.url }}" alt="Image" class="img-fluid" />
+              </a>
+
+              <div class="property-content">
+                <div class="price mb-2"><span>{{i.place_name}}</span></div>
+                <div>
+                  <span class="d-block mb-2 text-black-50">{{i.about_place|slice:'0:40'}}.....</span>
+                  <span class="city d-block mb-3">{{i.place_loacation}}</span>
+
+                  <a href="{% url 'place_quick_view' i.id %}" class="btn btn-primary py-2 px-3">See details</a>
+                </div>
+              </div>
+            </div>
+            
+            {% endfor %}<!-- .item -->
+          </div>
+
+          <div id="property-nav" class="controls" tabindex="0" aria-label="Carousel Navigation">
+            <span class="prev" data-controls="prev" aria-controls="property" tabindex="-1">Prev</span>
+            <span class="next" data-controls="next" aria-controls="property" tabindex="-1">Next</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section section-2">
+  <div class="container">
+    <div class="row mb-5 align-items-center" data-aos="fade-up" data-aos-delay="500">
+      <div class="col-lg-6">
+        <h2 class="font-weight-bold text-primary heading">
+          Choose a Holiday Home in Dubai
+        </h2>
+      </div>
+      <div class="col-lg-6 text-lg-end">
+        <p>
+          <a href="{% url 'properties' %}" target="_blank" class="btn btn-primary text-white py-3 px-4">View all homes</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="slider-wrapper" data-aos="fade-up" data-aos-delay="500">
+      <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
+      <div class="image-list">
+        
+        {% for i in villas %}
+        <div class="card image-item" style="width: 18rem;">
+          <img src="{{i.image.url}}" class="card-img-top" alt="{{i.villa_or_apartment_name}} {{i.loacation}}">
+          <div class="card-body">
+            <h5 class="card-title">{{i.villa_or_apartment_name}}</h5>
+            <h6 class="card-title"><i class="fa-solid fa-location-dot"></i> {{i.loacation}}</h6>
+            <h6 class="card-title"><i class="fa-solid fa-house"></i> {{i.type}}</h6>
+            <div class="specs d-flex mb-4">
+              <span class="d-block d-flex align-items-center me-3">
+                <span class="icon-bed me-2"></span>
+                <span class="caption">{{i.bed}}</span>
+              </span>
+              <span class="d-block d-flex align-items-center">
+                <span class="icon-bath me-2"></span>
+                <span class="caption">{{i.washroom}}</span>
+              </span>
+            </div>
+            <a href="{% url 'home_single' i.id %}" class="btn btn-primary py-2 px-3">See details</a>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+      <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>
+    </div>
+
+    <div class="slider-scrollbar">
+      <div class="scrollbar-track">
+        <div class="scrollbar-thumb"></div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<div class="section">
+  <div class="row justify-content-center footer-cta" data-aos="fade-up" data-aos-delay="500">
+    <div class="col-lg-7 mx-auto text-center">
+      <h2 class="mb-4">Be a part of our holiday home — where every stay feels like coming home</h2>
+      <p>
+        <a href="#" target="_blank" class="btn btn-primary text-white py-3 px-4" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">Book Now</a>
+      </p>
+    </div>
+    <!-- /.col-lg-7 -->
+  </div>
+  <!-- /.row -->
+</div>
+
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials section" data-aos="fade-up" data-aos-delay="500">
+
+  <div class="container">
+
+    <div class="row align-items-center">
+
+      <div class="col-lg-5 info" data-aos="fade-up" data-aos-delay="100">
+        <h3>Customer Says</h3>
+        <p>
+          At Superior Stay Homes, we don’t just provide a place to stay — we create memorable experiences. Our guests often tell us how our thoughtfully selected homes, warm hospitality, and seamless booking process made their trip to Dubai feel effortless and special. From families on vacation to solo travelers seeking tranquility, our homes have become the backdrop for unforgettable moments. Whether it’s the stunning views from our villas, the comfort of our apartments, or the care from our support team — the stories we hear from our guests inspire us to keep delivering excellence, one stay at a time.
+        </p>
+      </div>
+
+      <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+          <div class="swiper-wrapper">
+
+            {% for i in reviews %}
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="d-flex">
+                  <img src="{{i.image.url}}" class="testimonial-img flex-shrink-0" alt="">
+                  <div>
+                    <h3>{{i.name}}</h3>
+                    <h4>{{i.profession}}</h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>{{i.description}}</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+            {% endfor %}
+
+
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section><!-- /Testimonials Section -->
+
+
+{% include "realestate/modal.html" %}
+
+
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

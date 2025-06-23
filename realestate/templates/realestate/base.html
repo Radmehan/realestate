@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="shortcut icon" href="{% static 'house/favicon.png' %}" />
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="bootstrap, bootstrap5" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+
+  <link rel="stylesheet" href="{% static 'house/fonts/icomoon/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'house/fonts/flaticon/font/flaticon.css' %}" />
+
+  <link rel="stylesheet" href="{% static 'house/css/tiny-slider.css' %}" />
+  <link rel="stylesheet" href="{% static 'house/css/aos.css' %}" />
+  <link rel="stylesheet" href="{% static 'house/css/style.css' %}" />
+
+  <title>{% block title %} {% endblock %}</title>
+  <style>
+    {
+      % block css %
+    }
+
+      {
+      % endblock %
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close">
+        <span class="icofont-close js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+  <nav class="site-nav">
+    <div class="container">
+      <div class="menu-bg-wrap">
+        <div class="site-navigation">
+          <div class="row align-items-center">
+            <div class="logo col-lg-2 col-md-2 col-sm-2">
+              <a href="{% url 'home' %}" class="logo m-0 float-start">
+                <img src="{% static 'house/images/logo.jpeg' %}" alt="" srcset="" style="border-radius: 7px;">
+              </a>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-10">
+              <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+                <li class="active"><a href="{% url 'places' %}">Places</a></li>
+                <li class=" "><a href="{% url 'properties' %}">Homes</a></li>
+                <!-- <li class="has-children">
+                <a href="properties.html">Properties</a>
+                <ul class="dropdown">
+                  <li><a href="#">Buy Property</a></li>
+                  <li><a href="#">Sell Property</a></li>
+                  <li class="has-children">
+                    <a href="#">Dropdown</a>
+                    <ul class="dropdown">
+                      <li><a href="#">Sub Menu One</a></li>
+                      <li><a href="#">Sub Menu Two</a></li>
+                      <li><a href="#">Sub Menu Three</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li> -->
+                <li><a href="{% url 'service' %}">Services</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                <li><a href="#" target="_blank" class="btn btn-primary text-white py-3 px-4" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">Book Now</a></li>
+              </ul>
+              <a href="#"
+                class="burger light me-auto float-end mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none"
+                data-toggle="collapse" data-target="#main-navbar">
+                <span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  {% for message in messages %}
+  <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert" style="margin: 0px; z-index: 200;">
+    <strong>Message : </strong> {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <!-- <span aria-hidden="true">&times;</span> -->
+  </div>
+
+  {% endfor %}
+
+  {% block body %} {% endblock %}
+
+  <div class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="widget">
+            <h3>Contact</h3>
+            <address>Office No 1706, Damac XL tower, <br> Business Bay, Dubai </address>
+            <ul class="list-unstyled links">
+              <li><a href="tel://+9714480904">+9714480904</a></li>
+              <li>
+                <a href="">info@superiorstayhomes.com</a>
+                <a href="">Shahid@superiorstayhomes.com</a>
+              </li>
+            </ul>
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <div class="widget">
+            <h3>Sources</h3>
+            <ul class="list-unstyled float-start links">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Vision</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Privacy</a></li>
+            </ul>
+
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <div class="widget">
+            <h3>Links</h3>
+            <ul class="list-unstyled links">
+              <li><a href="#">Our Vision</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+
+            <ul class="list-unstyled social">
+              <li>
+                <a href="#"><span class="icon-instagram"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="icon-twitter"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="icon-facebook"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="icon-linkedin"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="icon-pinterest"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="icon-dribbble"></span></a>
+              </li>
+            </ul>
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /.col-lg-4 -->
+      </div>
+      <!-- /.row -->
+
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+
+          <p>
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            . All Rights Reserved. &mdash; With love by
+            <a href="#">superiorstayhomes.com</a>
+          </p>
+          <div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.site-footer -->
+
+  <!-- Preloader -->
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+
+  <script src="{% static 'house/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'house/js/tiny-slider.js' %}"></script>
+  <script src="{% static 'house/js/aos.js' %}"></script>
+  <script src="{% static 'house/js/navbar.js' %}"></script>
+  <script src="{% static 'house/js/counter.js' %}"></script>
+  <script src="{% static 'house/js/custom.js' %}"></script>
+  <script src="{% static 'house/js/script.js' %}"></script>
+
+
+  {% block js %} {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Booking Today</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="{% url 'booking_now' %}" method="POST">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="name" class="form-label">Enter Your Name</label>
+            <input type="text" class="form-control" id="name" aria-describedby="name">
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Enter Your Email</label>
+            <input type="email" class="form-control" id="email" aria-describedby="email">
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Enter Your Number</label>
+            <input type="tel" class="form-control" id="phone" aria-describedby="phone">
+          </div>
+
+          <div class="mb-3">
+            <label for="address" class="form-label">Enter Your Address</label>
+            <input type="text" class="form-control" id="address" aria-describedby="address">
+          </div>
+
+          <div class="mb-3">
+            <label for="place" class="form-label">Enter Your Place</label>
+            <input type="text" class="form-control" id="place" aria-describedby="place">
+          </div>
+
+          <div class="row mb-3" style="padding: 0px 11px;">
+
+            <div class="form-check col-md-6">
+              <input class="form-check-input" type="radio" name="home" id="exampleRadios1" value="apartment" checked>
+              <label class="form-check-label" for="exampleRadios1">
+                Appartment
+              </label>
+            </div>
+            <div class="form-check col-md-6">
+              <input class="form-check-input" type="radio" name="home" id="exampleRadios1" value="nagad">
+              <label class="form-check-label" for="exampleRadios1">
+                Villa
+              </label>
+            </div>
+
+
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+      </div>
+    </div>
+  </div>
+</div>
