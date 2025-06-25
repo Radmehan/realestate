@@ -3,7 +3,7 @@
         "src" : "realestate/wsgi.py",
         "use" : "@vercel/python",
         "config" : {
-            "maxLambdaSize" : "521mb",
+            "maxLambdaSize" : "50mb",
             "runtime" : "python3.12.7"
         }
     }],
