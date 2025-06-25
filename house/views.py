@@ -40,7 +40,7 @@ def places(request):
 def place_single(request, city):
     places = AddPlace.objects.filter(city=city)
 
-    images = [place.image.url for place in places if place.image]
+    images = [place.image_id for place in places if place.image]
 
     try:
         apartment_type = Type.objects.get(villa_appartment__iexact='Apartment')

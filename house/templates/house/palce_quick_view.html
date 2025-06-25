@@ -8,7 +8,7 @@
 
 {% block body %}
 
-<div class="hero page-inner overlay" style="background-image: url({{i.image.url}})">
+<div class="hero page-inner overlay" style="background-image: url({{i.image_id}})">
   <div class="container">
     <div class="row justify-content-center align-items-center">
       <div class="col-lg-9 text-center mt-5">
@@ -43,7 +43,7 @@
       <div class="col-12 mb-1">
         <div class="lightbox">
           <img id="main-img"
-               src="{{i.image.url}}"
+               src="{{i.image_id}}"
                alt="Gallery image 1"
                class="ecommerce-gallery-main-img active w-100" />
         </div>
@@ -51,28 +51,28 @@
 
       <!-- Thumbnails -->
       <div class="col-3 mt-1">
-        <img src="{{i.image.url}}"
+        <img src="{{i.image_id}}"
              alt="Gallery image 1"
              class="thumb-img w-100 active"
-             data-full="{{i.image.url}}" />
+             data-full="{{i.image_id}}" />
       </div>
       <div class="col-3 mt-1">
-        <img src="{{i.sub_image1.url}}"
+        <img src="{{i.sub_image1_id}}"
              alt="Gallery image 2"
              class="thumb-img w-100"
-             data-full="{{i.sub_image1.url}}" />
+             data-full="{{i.sub_image1_id}}" />
       </div>
       <div class="col-3 mt-1">
-        <img src="{{i.sub_image2.url}}"
+        <img src="{{i.sub_image2_id}}"
              alt="Gallery image 3"
              class="thumb-img w-100"
-             data-full="{{i.sub_image2.url}}" />
+             data-full="{{i.sub_image2_id}}" />
       </div>
       <div class="col-3 mt-1">
-        <img src="{{i.sub_image3.url}}"
+        <img src="{{i.sub_image3_id}}"
              alt="Gallery image 4"
              class="thumb-img w-100"
-             data-full="{{i.sub_image3.url}}" />
+             data-full="{{i.sub_image3_id}}" />
       </div>
     </div>
   </div>

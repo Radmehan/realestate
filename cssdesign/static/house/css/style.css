@@ -4007,6 +4007,7 @@ textarea.form-control-lg {
 .carousel-caption.d-none.d-md-block .c-para{
   font-size: 18px;
   font-weight: 800;
+  color: #ffffff !important;
 }
 
 @media(max-width:991px){
@@ -9257,11 +9258,12 @@ h5.card-title{
 
 .site-nav {
   padding-top: 20px;
-  padding-bottom: 20px;
-  position: absolute;
-  top: 0;
+  padding-bottom: 0px !important;
+  position: fixed !important;
+  top: -22px !important;
   z-index: 9;
-  width: 100%; }
+  width: 100%; 
+  background: black !important;}
   .site-nav h1, .site-nav .h1 {
     margin: 0;
     padding: 0;
@@ -9275,7 +9277,7 @@ h5.card-title{
         padding: 10px 15px;
         display: inline-block;
         text-decoration: none !important;
-        color: #000000;
+        color: #ffffff !important;
         font-weight: 800; 
       }
 
@@ -9293,7 +9295,7 @@ h5.card-title{
           background: #00204a;
           border-color: #00204a; }
       .site-nav .site-navigation .site-menu > li.active > a {
-        color: #000000;
+        color: #ffffff !important;
         font-weight: 800;
       
       }
@@ -9545,6 +9547,10 @@ h5.card-title{
                 font-size: 14px;
                 padding-left: 60px; }
 
+div#carouselExampleCaptions {
+    margin-top: 4rem !important;
+}
+
 .sticky-wrapper {
   position: absolute;
   z-index: 100;
@@ -9719,7 +9725,7 @@ textarea {
 
 .menu-bg-wrap {
   /* background-color: var(--btn-bg-color); */
-  backdrop-filter: blur(15px);
+  /* backdrop-filter: blur(15px); */
   padding: 20px 30px;
   position: relative;
   float: left;

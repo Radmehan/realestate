@@ -18,6 +18,7 @@
       aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -34,7 +35,7 @@
     </div>
     <div class="carousel-item">
       <video class="img-fluid" autoplay loop muted>
-        <source src="https://mdbcdn.b-cdn.net/img/video/Tropical.mp4" type="video/mp4" />
+        <source src="{% static 'house/images/3.mp4' %}" type="video/mp4" />
       </video>
       <div class="carousel-caption d-none d-md-block">
         <h5 class="c-title">Short Term Vacation Rentals in Dubai</h5>
@@ -44,9 +45,7 @@
       </div>
     </div>
     <div class="carousel-item">
-      <video class="img-fluid" autoplay loop muted>
-        <source src="{% static 'house/images/3.mp4' %}" type="video/mp4" />
-      </video>
+      <img src="{% static 'house/images/home/1.jpeg' %}" alt="" srcset="">
       <div class="carousel-caption d-none d-md-block">
         <h5 class="c-title">Vacation Rentals Management Services in Dubai</h5>
         <p class="c-para">A hotel experience
@@ -54,6 +53,7 @@
           Dubai!</p>
       </div>
     </div>
+    
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -204,7 +204,7 @@
             {% for i in places %}
             <div class="property-item">
               <a href="property-single.html" class="img">
-                <img src="{{ i.image.url }}" alt="Image" class="img-fluid" />
+                <img src="{{ i.image_id }}" alt="Image" class="img-fluid" />
               </a>
 
               <div class="property-content">
@@ -252,7 +252,7 @@
         
         {% for i in villas %}
         <div class="card image-item" style="width: 18rem;">
-          <img src="{{i.image.url}}" class="card-img-top" alt="{{i.villa_or_apartment_name}} {{i.loacation}}">
+          <img src="{{i.image_id}}" class="card-img-top" alt="{{i.villa_or_apartment_name}} {{i.loacation}}">
           <div class="card-body">
             <h5 class="card-title">{{i.villa_or_apartment_name}}</h5>
             <h6 class="card-title"><i class="fa-solid fa-location-dot"></i> {{i.loacation}}</h6>

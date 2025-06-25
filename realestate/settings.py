@@ -115,6 +115,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+GOOGLE_DRIVE_CREDENTIALS_PATH = 'D:\\others\\real estate\\real estate\\\house\\service_account.json'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
@@ -149,3 +150,6 @@ EMAIL_HOST_PASSWORD = 'lryqetfvwnxczfim'
 DEFAULT_FROM_EMAIL = 'noreply<no_reply@domain.com>'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# xymkjlaheykudsbc
+# useforweb.django@gmail.com

@@ -91,7 +91,7 @@
       </div>
       <div class="col-lg-6 text-lg-end">
         <p>
-          <a href="#" target="_blank" class="btn btn-primary text-white py-3 px-4">Enjoying
+          <a href="#" class="btn btn-primary text-white py-3 px-4">Enjoying
             Apartment</a>
         </p>
       </div>
@@ -124,7 +124,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card">
-                <img src="{{ apartment.image.url }}" class="card-img-top" alt="{{ apartment.villa_or_apartment_name }}">
+                <img src="{{ apartment.image_id }}" class="card-img-top" alt="{{ apartment.villa_or_apartment_name }}">
                 <div class="card-body">
                   <h5 class="card-title">{{ apartment.villa_or_apartment_name }}</h5>
                   <h6 class="card-title">
@@ -211,7 +211,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card">
-                <img src="{{ villa.image.url }}" class="card-img-top" alt="{{ villa.villa_or_apartment_name }}">
+                <img src="{{ villa.image_id }}" class="card-img-top" alt="{{ villa.villa_or_apartment_name }}">
                 <div class="card-body">
                   <h5 class="card-title">{{ villa.villa_or_apartment_name }}</h5>
                   <h6 class="card-title">

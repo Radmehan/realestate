@@ -16,7 +16,7 @@
       <!-- <video class="img-fluid" autoplay loop muted>
         <source src="{% static 'house/images/service/2.mp4' %}" type="video/mp4" />
       </video> -->
-      <img src="{{i.image.url}}" alt="Image" srcset="">
+      <img src="{{i.image_id}}" alt="Image" srcset="">
       <div class="carousel-caption d-none d-md-block">
         <h5 class="c-title">{{i.villa_or_apartment_name}}</h5>
         <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
@@ -47,27 +47,27 @@
             <!-- Main Image -->
             <div class="col-12 mb-1">
               <div class="lightbox">
-                <img id="main-img" src="{{i.image.url}}" alt="Gallery image 1"
+                <img id="main-img" src="{{i.image_id}}" alt="Gallery image 1"
                   class="ecommerce-gallery-main-img active w-100" />
               </div>
             </div>
 
             <!-- Thumbnails -->
             <div class="col-3 mt-1">
-              <img src="{{i.image.url}}" alt="Gallery image 1" class="thumb-img w-100 active"
-                data-full="{{i.image.url}}" />
+              <img src="{{i.image_id}}" alt="Gallery image 1" class="thumb-img w-100 active"
+                data-full="{{i.image_id}}" />
             </div>
             <div class="col-3 mt-1">
-              <img src="{{i.sub_image1.url}}" alt="Gallery image 2" class="thumb-img w-100"
-                data-full="{{i.sub_image1.url}}" />
+              <img src="{{i.sub_image1_id}}" alt="Gallery image 2" class="thumb-img w-100"
+                data-full="{{i.sub_image1_id}}" />
             </div>
             <div class="col-3 mt-1">
-              <img src="{{i.sub_image2.url}}" alt="Gallery image 3" class="thumb-img w-100"
-                data-full="{{i.sub_image2.url}}" />
+              <img src="{{i.sub_image2_id}}" alt="Gallery image 3" class="thumb-img w-100"
+                data-full="{{i.sub_image2_id}}" />
             </div>
             <div class="col-3 mt-1">
-              <img src="{{i.sub_image3.url}}" alt="Gallery image 4" class="thumb-img w-100"
-                data-full="{{i.sub_image3.url}}" />
+              <img src="{{i.sub_image3_id}}" alt="Gallery image 4" class="thumb-img w-100"
+                data-full="{{i.sub_image3_id}}" />
             </div>
           </div>
         </div>
